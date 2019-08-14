@@ -1,9 +1,8 @@
-# openssl-src
+# mbedtls-src
 
-This crate contains the logic to build OpenSSL and is intended to be consumed by
-the `openssl-sys` crate. You likely in theory aren't interacting with this too
-much!
-
+This crate contains the logic to build mbedtls and is intended to be
+consumed by the `mbedtls-sys` crate. You likely in theory aren't
+interacting with this too much!
 
 # License
 
@@ -18,6 +17,13 @@ at your option.
 
 ### Contribution
 
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in Serde by you, as defined in the Apache-2.0 license, shall be
-dual licensed as above, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally
+submitted for inclusion in mbedtls-src by you, as defined in the
+Apache-2.0 license, shall be dual licensed as above, without any
+additional terms or conditions.
+
+### Foundations
+
+This crate is heavily based on the work of Alex Crichton's crate for [OpenSSL].
+
+[OpenSSL]: https://github.com/alexcrichton/openssl-src-rs

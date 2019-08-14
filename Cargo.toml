@@ -1,20 +1,13 @@
 [package]
-name = "openssl-src"
-version = "111.5.0+1.1.1c"
-authors = ["Alex Crichton <alex@alexcrichton.com>"]
+name = "mbedtls-src"
+version = "0.0.0+3.0.0p1"
+authors = ["Nathaniel McCallum <npmccallum@redhat.com>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/alexcrichton/openssl-src-rs"
+repository = "https://github.com/npmccallum/mbedtls-src"
 description = """
-Source of OpenSSL and logic to build it.
+Source of mbedtls and logic to build it.
 """
-exclude = [
-  'openssl/boringssl/*',
-  'openssl/fuzz/*',
-  'openssl/krb5/*',
-  'openssl/pyca-cryptography/*',
-  'openssl/test/*',
-]
 
 [workspace]
 members = ['testcrate']
