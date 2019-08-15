@@ -1,0 +1,17 @@
+services: docker
+language: c
+dist: bionic
+
+env:
+  matrix:
+    - IMAGE=alpine:edge
+    - IMAGE=ubuntu:latest
+    - IMAGE=debian:latest
+    - IMAGE=fedora:latest
+
+install:
+  - sed -e "s|@IMAGE@|$IMAGE|" .travis.dockerfile.${IMAGE%:*} > Dockerfile
+  - docker build -t $TRAVIS_COMMIT .
+
+script:
+  - docker run -it --rm -v `pwd`:/tmp/build $TRAVIS_COMMIT

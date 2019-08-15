@@ -1,0 +1,9 @@
+FROM @IMAGE@
+
+RUN apk add rust cargo gcc make python2
+
+ENV RUST_BACKTRACE=1
+
+VOLUME /tmp/build
+WORKDIR /tmp/build
+CMD cd testcrate && cargo build --verbose && cargo test --verbose

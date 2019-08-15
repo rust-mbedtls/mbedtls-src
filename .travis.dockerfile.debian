@@ -1,0 +1,10 @@
+FROM @IMAGE@
+
+RUN apt-get update
+RUN apt-get install -y build-essential rustc cargo python2
+
+ENV RUST_BACKTRACE=1
+
+VOLUME /tmp/build
+WORKDIR /tmp/build
+CMD cd testcrate && cargo build --verbose && cargo test --verbose

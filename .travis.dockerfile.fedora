@@ -1,0 +1,9 @@
+FROM @IMAGE@
+
+RUN sudo dnf install -y cargo rustfmt python2 make
+
+ENV RUST_BACKTRACE=1
+
+VOLUME /tmp/build
+WORKDIR /tmp/build
+CMD cargo fmt -- --check && cd testcrate && cargo build --verbose && cargo test --verbose
